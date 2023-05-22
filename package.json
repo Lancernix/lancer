@@ -1,0 +1,48 @@
+{
+  "name": "lancer-cli",
+  "version": "0.0.1",
+  "description": "a simple cli for front-end projects",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "bin": {
+    "lancer-cli": "./bin/cli.js"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "eslint": "eslint .",
+    "cz": "./node_modules/cz-customizable/standalone.js",
+    "build": "rm -rf lib && tsc"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "pnpm run eslint"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [],
+  "author": "lancernix",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^10.0.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@types/node": "^20.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  }
+}
